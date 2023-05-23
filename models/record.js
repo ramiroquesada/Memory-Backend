@@ -5,7 +5,11 @@ const RecordSchema = Schema({
 		type: String,
 		required: true
 	},
-	record: {
+	clicks: {
+		type: String,
+		required: true
+	},
+	time: {
 		type: String,
 		required: true
 	},
@@ -13,6 +17,10 @@ const RecordSchema = Schema({
 		type: Date,
 		required: true,
 	},
+	gamemode: {
+		type: String,
+		required: true,
+	}
 });
 
 module.exports = model('Record', RecordSchema);

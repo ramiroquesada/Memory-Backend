@@ -16,6 +16,7 @@ dbConnection()
 //cors
 
 app.use(cors())
+
 //direcorios publicos
 app.use( express.static('public') )
 
@@ -30,5 +31,5 @@ app.use('/api/leaderboard', require('./routes/leaderboard'))
 //escuchar peticiones
 
 app.listen( process.env.PORT, () => {
-	console.log(`servidor corriendo en puerto ${process.env.PORT}`)
+	console.log(`servidor corriendo en el puerto ${process.env.PORT}`)
 } )

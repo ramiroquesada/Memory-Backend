@@ -11,13 +11,15 @@ const { isDate } = require('../helpers/isDate');
 const router = Router()
 
 
-router.get('/', getRanking) ;
+router.get('/all', getRanking) ;
 
 router.post('/new', [
 	//middlewares
 	check('name', 'El nombre es obligatorio').not().isEmpty(),
-	check('record', 'El record es obligatorio').not().isEmpty(),
-	check('date', 'Fecha es obligatoria').custom( isDate ),
+	check('clicks', 'Los clicks son obligatorios').not().isEmpty(),
+	check('time', 'El tiempo es obligatorio').not().isEmpty(),
+	check('gamemode', 'El modo de juego es obligatorio').not().isEmpty(),
+	check('date', 'La fecha es obligatoria').custom( isDate ),
 	validarCampos
 ], postRecord);
 
