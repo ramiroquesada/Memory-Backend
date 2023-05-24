@@ -18,7 +18,7 @@ router.post('/new', [
 	check('name', 'El nombre es obligatorio').not().isEmpty(),
 	check('clicks', 'Los clicks son obligatorios').not().isEmpty(),
 	check('time', 'El tiempo es obligatorio').not().isEmpty(),
-	check('gamemode', 'El modo de juego es obligatorio').not().isEmpty(),
+	check('gameMode', 'El modo de juego es obligatorio').not().isEmpty(),
 	check('date', 'La fecha es obligatoria').custom( isDate ),
 	validarCampos
 ], postRecord);

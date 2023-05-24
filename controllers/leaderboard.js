@@ -2,15 +2,21 @@ const { response } = require('express');
 
 const Record = require('../models/record');
 
-const getRanking = async(req, res = response) => {
+const getRanking = async (req, res = response) => {
+	try {
+		const records = await Record.find();
 
-	const records = await Record.find();
-
-	res.json({
-		ok: true,
-		msg: 'ranking',
-		records
-	});
+		res.status(200).json({
+			ok: true,
+			msg: 'Ranking',
+			records,
+		});
+	} catch (error) {
+		res.status(500).json({
+			ok: false,
+			msg: 'Hable con el administrador',
+		});
+	}
 };
 
 const postRecord = async (req, res = response) => {
@@ -21,14 +27,14 @@ const postRecord = async (req, res = response) => {
 
 		res.status(201).json({
 			ok: true,
-			msg: 'new record posted',
+			msg: 'Nuevo record posteado',
+			record
 		});
-
 	} catch (error) {
 		res.status(500).json({
 			ok: false,
-			msg: 'Hable con el administrador'
-		})
+			msg: 'Hable con el administrador',
+		});
 	}
 };
 

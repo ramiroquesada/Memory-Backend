@@ -6,20 +6,36 @@ const RecordSchema = Schema({
 		required: true
 	},
 	clicks: {
-		type: String,
+		type: Number,
 		required: true
 	},
 	time: {
-		type: String,
-		required: true
+		minutes: {
+			type: Number,
+			required: true,
+		},
+		seconds:{
+			type: Number,
+			required: true,
+		},
+		miliseconds:{
+			type: Number,
+			required: true
+		},
 	},
 	date: {
 		type: Date,
 		required: true,
 	},
-	gamemode: {
-		type: String,
-		required: true,
+	gameMode: {
+		modeName: {
+			type: String,
+			required: true,
+		},
+		modeId: {
+			type: Number,
+			required: true
+		}
 	}
 });
 
